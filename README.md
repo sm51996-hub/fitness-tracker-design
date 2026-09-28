@@ -38,7 +38,22 @@ MODULE Main()
     DECLARE String sub_choise = ''
     DECLARE Real duration = 0.0
     DECLARE String activity_name = ""
+    
+    DISPLAY "==========================="
+    DISPLAY "    CAMPUS FITNESS TRACKWE "
+    DISPLAY "==========================="
 
+    WHILE True
+        // Step 1: Main Menu & Input Vallidation
+        DISPLAY "---MAIN MENU---"
+        DISPLAY "1. Log Cardio Workout"
+        DISPLAY "2. Log Strength Workout"
+        DISPLAY "3. View Activity Summary"
+        DISPLAY "4. Exit"
+        INPUT main_choise
+
+        WHILE main_choise != 1 AND main_coise != 2. AND main_choise != and 3 AND main_choise != 4
+            DISPLAY ""
 ```
 
 
