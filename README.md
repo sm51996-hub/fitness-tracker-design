@@ -33,29 +33,125 @@ Fitness Tracker Pseudocode and Flowchart and IPO Chart
 MODULE Main()
     DECLARE Integer total_cardio = 0
     DECLARE Integer total_strength = 0
-    DECLARE Integer total_avtive = 0
-    DECLARE String main_choise = ''
-    DECLARE String sub_choise = ''
+    DECLARE Integer total_active = 0
+    DECLARE String main_choice = ""
+    DECLARE String sub_choice = ""
     DECLARE Real duration = 0.0
     DECLARE String activity_name = ""
-    
-    DISPLAY "==========================="
-    DISPLAY "    CAMPUS FITNESS TRACKWE "
-    DISPLAY "==========================="
+
+    DISPLAY "=============================="
+    DISPLAY "    CAMPUS FITNESS TRACKER    "
+    DISPLAY "=============================="
 
     WHILE True
-        // Step 1: Main Menu & Input Vallidation
+        // Step 1: Main Menu & Input Validation
         DISPLAY "---MAIN MENU---"
         DISPLAY "1. Log Cardio Workout"
-        DISPLAY "2. Log Strength Workout"
+        DISPLAY "2. Log Strength Workout
         DISPLAY "3. View Activity Summary"
         DISPLAY "4. Exit"
-        INPUT main_choise
+        DISPLAY "Enter your choice (1-4):"
+        INPUT main_choice
 
-        WHILE main_choise != 1 AND main_coise != 2. AND main_choise != and 3 AND main_choise != 4
-            DISPLAY ""
+        WHILE main_choice != 1 AND main_choice != 2 AND main_choice != 3 AND main_choice != 4
+            DISPLAY "Invalid. Choice must be 1, 2, 3, or 4. Try Again:"
+            INPUT main_choice
+        END WHILE
+
+        // Step 2. Route Submenus and Actions
+        IF main_choice == 1 THEN
+            DISPLAY "--- CARDIO MENU ---"
+            DISPLAY "1. Running / Jogging"
+            DISPLAY "2. Cycling"
+            DISPLAY "3. Swimming"
+            DISPLAY "Enter cardio activity (1-3):"
+            INPUT sub_choice
+
+            WHILE sub_choice != 1 AND sub_choice != 2 AND sub_choice != 3
+                DISPLAY "Invalid. Please enter 1, 2, or 3. Try again!"
+                INPUT sub_choice
+            END WHILE
+
+            IF sub_choice == 1 THEN
+                activity_name = "Running / Jogging"
+            ELSE IF sub_choice == 2 THEN
+                activity_name = "Cycling"
+            ELSE
+                activity_name "Swimming"
+            END IF
+
+            DISPLAY "Enter duration in minutes:"
+            INPUT duration
+            WHILE duration < 0
+                DISPLAY "Invalid. Please enter minutes >= 0:"
+                INPUT duration
+            END WHILE
+
+            total_cardio = total_cardio + duration
+            DISPLAY "Successfully added ", duration, "minutes for", activity_name, "."
+
+         ELSE IF main_choice == 2 THEN
+             DISPLAY "--- STRENGTH MENU ---"
+             DISPLAY "1. Upper Body"
+             DISPLAY "2. Lower Body"
+             DISPLAY "3. Core & Flexibility"
+             DISPLAY "Enter strength category (1-3):"
+
+             WHILE sub_choice != 1 AND sub_choice != 2 AND sub_choice != 3
+                 DISPLAY "Invalid. Please enter 1, 2, or 3. Try again!"
+             END WHILE
+
+             IF sub_choice == 1 THEN
+                 activity_name = "Upper Body"
+             ELSE IF sub_choice == 2 THEN
+                 activity_name = "Lower Body"
+             ELSE
+                 activity_name = "Core & Flexibility"
+             END IF
+
+             DISPLAY "ENter duration in minutes:"
+             INPUT duration
+             wHILE duration < 0
+                 DISPLAY "Invalid. Please enter minutes >= 0:"
+                 INPUT duration
+             END WHILE
+
+             total_strength = total_strength + duration
+             DISPLAY "Succesfully added ", duration, "minutes for", activity_name, "."
+
+        ELSE IF main_choice == 3 THEN
+            total_active = total_cardio + total_strength
+            DISPLAY "========================================="
+            DISPLAY "          ACTIVITY SUMMARY               "
+            DISPLAY "========================================="
+            DISPLAY "Total Cardio:", total_cardio
+            DISPLAY "Total Strength:", total_strength
+            DISPLAY "Total Active:", total_active
+
+            IF total_active >= 120 THEN
+                DISPLAY "Statues: Goal Achieved! You exceeded 120 weekly active minutes."
+            ELSE IF total_active > 0 THEN
+                DISPLAY "Status: Keep going! ", (120 - total_active), " more minutes needed to hit"
+                DISPLAY "your weekly target."
+            ELSE
+                DISPLAY "Status: No workouts logged yet."
+            END IF
+            DISPLAY "========================================="
+
+        ELSE IF main_choice == 4 THEN
+             DISPLAY "Thank you for using Compuse Fitness Tracker. Stay Active!"
+             BREAK
+         END IF
+       END WHILE
+END MODULE
+
 ```
 
+
+
+
+
+```
 
 
 
